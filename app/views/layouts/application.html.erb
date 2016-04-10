@@ -7,12 +7,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link href='/assets/webfontkit-arista2.0/_index.scss' rel='stylesheet' type='text/css' charset='utf-8'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Varela+Round' rel='stylesheet' type='text/css'>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <div class="background">
+        <%= yield %>
+        <%= javascript_include_tag 'application' %>
+      </div>
   </body>
 </html>

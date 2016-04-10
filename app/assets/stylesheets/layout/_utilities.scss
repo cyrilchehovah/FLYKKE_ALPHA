@@ -23,3 +23,42 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+body {
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333333;
+  background-color: white;
+  display: block;
+}
+
+.background {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($blue, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($blue, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($blue, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($blue, white); /* Standard syntax */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+
+  margin-top: -70px;
+  z-index: -1;
+}
