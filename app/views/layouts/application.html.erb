@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Flykke" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Flykke is a social platform to discover and help support content creators and charities concretely & freely thanks to a smart system of advertisement display" %>">
     <%= csrf_meta_tags %>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
