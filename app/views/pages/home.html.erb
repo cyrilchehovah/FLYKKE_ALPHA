@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to "All", root_path, id: "all-cat", class: "navbar-wagon-button btn post-category" %>
+      <%= link_to new_user_session_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
+        <i class="fa fa-globe"></i> Charity
+      <% end %>
+      <%= link_to root_path, id: "news-cat", class: "navbar-wagon-button btn post-category" do %>
+        <i class="fa fa-newspaper-o"></i> News
+      <% end %>
+      <%= link_to root_path, id: "photos-cat", class: "navbar-wagon-button btn post-category" do %>
+        <i class="fa fa-camera"></i> Photos
+      <% end %>
+      <%= link_to root_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
+        <i class="fa fa-video-camera"></i> Videos
+      <% end %>
+    </div>
+  </div>
+</div>
+

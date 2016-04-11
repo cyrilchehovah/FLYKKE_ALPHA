@@ -1,0 +1,57 @@
+.hideblank {
+  margin: -1px;
+}
+
+.btn-confirm {
+  background: $blue;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  &:hover {
+    background: $dark-blue;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.modal {
+  font-family: "varela round", "sans-serif";
+  color: $blue;
+  text-align: center;
+  & p {
+    text-align: left;
+  }
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-right: 30px;
+}
+
+.modal-title {
+    font-family: "arista 2.0";
+    font-size: 25px;
+    color: $dark-blue;
+}
+
+.modal-content {
+  font-size: 14px;
+  border-radius: 40px;
+  padding-left: 10px;
+  padding: 0px;
+  margin: -40px;
+}
+
+.modal-body {
+  padding-bottom: 0px;
+}
+
+.modal-footer {
+    border-top: none;
+    padding-top: 0px;
+    padding-right: 30px;
+}
