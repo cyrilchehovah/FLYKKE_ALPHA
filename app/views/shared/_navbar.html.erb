@@ -45,7 +45,7 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Login", "#login", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-link" %>
       |
       <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>

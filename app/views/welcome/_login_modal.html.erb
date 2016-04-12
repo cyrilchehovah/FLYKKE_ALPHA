@@ -1,17 +1,16 @@
-  <div class="modal fade in" id="sign_up">
+  <div class="modal fade in" id="login">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h2>Sign Up</h2>
-          <p>You are just one step away from revolutioning your way of liking everything</p>
+          <h2>Log in</h2>
         </div>
         <div class="modal-body">
           <%- if devise_mapping.omniauthable? %>
             <%- resource_class.omniauth_providers.each do |provider| %>
               <%= link_to omniauth_authorize_path(resource_name, :facebook), class: "btn btn-primary btn-facebook" do %>
-                 <i class="fa fa-facebook fa-2x fb-button" ></i> Sign in with <%= :facebook.to_s.titleize %>
+                 <i class="fa fa-facebook fa-2x fb-button" ></i> Login with <%= :facebook.to_s.titleize %>
                <% end %>
             <% end -%>
           <% end -%>
@@ -19,24 +18,23 @@
             <span class="signup-or-separator--text">or</span>
             <hr>
           </div>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
-              <%= f.input :first_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "first name", input_html: { class: "form-input" } %>
-              <%= f.input :last_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "last name", input_html: { class: "form-input" } %>
               <%= f.input :email, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "email", input_html: { class: "form-input" } %>
               <%= f.input :password, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "password", input_html: { class: "form-input" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-              <%= f.input :password_confirmation, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "Password confirmation", input_html: { class: "form-input" } %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Sign up", class: "btn-confirm"  %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <%= f.button :submit, "Log in", class: "btn-confirm"  %>
             </div>
           <% end %>
         </div>
         <div class="modal-footer">
-          <%- if controller_name != 'sessions' %>
-            <%= link_to "Log in", new_session_path(resource_name) %><br />
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Don't have an account? Sign up", new_registration_path(resource_name) %><br />
           <% end -%>
+
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
             <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
           <% end -%>
@@ -44,5 +42,9 @@
       </div>
     </div>
   </div>
+
+
+
+
 
 

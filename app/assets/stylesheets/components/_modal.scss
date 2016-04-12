@@ -1,3 +1,25 @@
+.signup-or-separator--text {
+    background-color: #fff;
+    display: inline-block;
+    padding: 6px;
+}
+
+.signup-or-separator {
+  background: none;
+  height: 34px;
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.signup-or-separator hr {
+    margin: -16px auto 10px auto;
+    width: 90%;
+    border-color: $blue;
+}
+
+
+
 .hideblank {
   margin: -1px;
 }
@@ -22,9 +44,17 @@
   font-family: "varela round", "sans-serif";
   color: $blue;
   text-align: center;
-  & p {
-    text-align: left;
+  & h2 {
+    color: $dark-blue;
   }
+  & p {
+    text-align: center;
+  }
+}
+
+.modal-dialog {
+  width: 450px;
+  margin-top: 100px;
 }
 
 .modal-header {
@@ -48,10 +78,34 @@
 
 .modal-body {
   padding-bottom: 0px;
+  margin: auto;
 }
 
 .modal-footer {
     border-top: none;
-    padding-top: 0px;
-    padding-right: 30px;
+    padding: 0 30px 20px 30px;
+    text-align: left;
+}
+
+
+.form-input {
+  width: 60%;
+  border-radius: 100px;
+  border: none;
+  box-shadow: none;
+  background-color: $light-blue;
+  color: $blue;
+  margin: auto;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: white;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: white;
+  }
 }

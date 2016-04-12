@@ -1,12 +1,25 @@
 .btn-facebook {
-  width: 100%;
+  width: 50%;
   background-color: #3A5795;
   display: flex;
   align-items: center;
   justify-content: space-around;
   border: none;
-  i {
+  margin: auto;
+  padding: 15px;
+  &:hover {
+    background-color: #3A5795;
+  }
+  & i {
     padding-right: 30px;
     border-right: 1px solid white;
   }
+}
+
+.btn-confirm {
+  background-color: $blue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 12px;
 }
