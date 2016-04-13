@@ -1,0 +1,81 @@
+
+
+<div class="modal fade in" id="create">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Post a new creation</h2>
+      </div>
+      <div class="modal-body">
+        <!-- to review : connect the old form for below whith errors with the fields of the new form -->
+        <%= form_for(@post) do |f| %>
+          <% if @post.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+              <ul>
+              <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+
+        <!-- choose a category for the post -->
+        <div class="row">
+          <div class= "text-center" >
+            <h4 class="text-center">Choose the content's topic</h4>
+            <button type="button" class="btn-interest-form post-category" id="charity-cat">Charity</button>
+            <button type="button" class="btn-interest-form post-category" id="food-cat">Food</button>
+            <button type="button" class="btn-interest-form post-category" id="lifestyle-cat">Lifestyle</button>
+            <button type="button" class="btn-interest-form post-category" id="travel-cat">Travel</button>
+          </div>
+        </div>
+
+        <!-- url to fill, then a preview of the post will append on the result div -->
+        <div class="row">
+          <div class="text-center col-xs-6 col-md-offset-3">
+            <h4>Enter the url of your creation</h4>
+            <%= simple_form_for(@post, :url => new_preview_path, remote: true) do |f| %>
+              <%= f.input :url , required: true, autofocus: true, inline_label: true, label: false, placeholder: "http://...", input_html: { class: "actions-inline form-input-create" }%>
+              <%= hidden_field_tag :interest, nil, id: "preview_category" %>
+              <%= f.submit 'load url', :id => 'submit_url', disabled: true, class: "actions-inline btn-confirm-sm"  %>
+            <% end %>
+          </div>
+        </div>
+
+          <div id="results">
+          </div>
+
+
+        <hr>
+
+        <div class="row">
+          <div class="text-center">
+            <p>By clicking Submit your creation, you agree to be the creator of this content <br> and to the <a href="">Flykke Pages Terms</a>.</p>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- fill the hidden form for the post creation with js -->
+        <div class="js-post-hidden-form">
+          <%= render 'posts/hidden_form', post: @post %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="form-actions">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

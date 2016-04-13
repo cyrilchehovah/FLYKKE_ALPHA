@@ -2,17 +2,17 @@
   <div class="row">
     <div class="col-xs-12">
       <%= link_to "All", root_path, id: "all-cat", class: "navbar-wagon-button btn post-category" %>
-      <%= link_to new_user_session_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
+      <%= link_to root_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
         <i class="fa fa-globe"></i> Charity
       <% end %>
-      <%= link_to root_path, id: "news-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-newspaper-o"></i> News
+      <%= link_to root_path, id: "food-cat", class: "navbar-wagon-button btn post-category" do %>
+        <%= image_tag("recipe.png", width: '16px', color: 'white') %></i> Food
       <% end %>
-      <%= link_to root_path, id: "photos-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-camera"></i> Photos
+      <%= link_to root_path, id: "lifestyle-cat", class: "navbar-wagon-button btn post-category" do %>
+        <i class="fa fa-camera"></i> Lifestyle
       <% end %>
-      <%= link_to root_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-video-camera"></i> Videos
+      <%= link_to root_path, id: "travel-cat", class: "navbar-wagon-button btn post-category" do %>
+        <%= image_tag("palm.png", width: '16px', height: '20px') %></i> Travel
       <% end %>
     </div>
   </div>

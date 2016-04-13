@@ -5,11 +5,20 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  border: none;
+  background-color: transparent;
+  color: $dark-red;
+  &-danger {
+    color: $dark-red;
+  }
 }
 .alert-info {
   background: $green;
 }
 .alert-warning {
   background: $red;
+}
+
+.help-block {
+  color: $dark-red;
 }

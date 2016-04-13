@@ -1,3 +1,7 @@
+// textarea:focus, input:focus{
+//     outline: none;
+// }
+
 .btn-facebook {
   width: 50%;
   background-color: #3A5795;
@@ -22,4 +26,41 @@
   border-radius: 5px;
   color: white;
   padding: 12px;
+  &-sm {
+    padding: 5px;
+    font-size: 16px;
+    background-color: $blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+}
+
+.btn-interest-form {
+  margin: 10px;
+  padding: 0 10px;
+  line-height: 40px;
+  color: $blue;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid $blue;
+  font-family: "varela round", "sans-serif";
+  background-color: transparent;
+  &:hover {
+    color: $yellow;
+    border-bottom: 1px solid $yellow;
+  }
+  &.active {
+    color: $yellow;
+    border-bottom: 1px solid $yellow;
+
+  }
+  &:active {
+    color: $yellow;
+    border-bottom: 1px solid $yellow;
+  }
+  &:target {
+    color: $yellow;
+    border-bottom: 1px solid $yellow;
+  }
 }

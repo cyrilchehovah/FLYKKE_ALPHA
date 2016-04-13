@@ -53,7 +53,7 @@
 }
 
 .modal-dialog {
-  width: 450px;
+  width: 45%;
   margin-top: 100px;
 }
 
@@ -107,5 +107,15 @@
   }
   &:-moz-placeholder { /* Firefox 18- */
     color: white;
+  }
+  &-create {
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    box-shadow: none;
+    background-color: $light-blue;
+    color: $blue;
+    margin: auto;
+
   }
 }
