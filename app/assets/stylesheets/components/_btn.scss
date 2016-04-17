@@ -64,3 +64,11 @@
     border-bottom: 1px solid $yellow;
   }
 }
+
+.icon-recipe:hover {
+  background-image:url("recipe-hover.png");
+}
+
+.icon-palm:hover {
+  background-image:url("palm-hover.png");
+}
