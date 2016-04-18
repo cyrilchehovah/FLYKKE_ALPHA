@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def belongs_to_user?(resource)
+    resource.user == current_user
+  end
+
   def resource_name
     :user
   end

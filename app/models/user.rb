@@ -23,5 +23,11 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
   end
+
+  def number_of_flykkes_received
+    array = self.posts.map { |post| [ post.get_likes(:vote_scope => 'flykke').size ] }
+    a = array.inject{|sum,x| sum + x }
+    return a.inject{|sum,x| sum + x }
+  end
 end
 

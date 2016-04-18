@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   post 'new_preview', to: 'posts#new_preview', as: 'new_preview'
 
+  put 'posts/:id/flykke' => 'likes#flykke', as: :flykke
+
 end
