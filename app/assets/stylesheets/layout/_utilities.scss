@@ -4,6 +4,12 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.pull-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .actions-inline {
   display: inline-block;
 }
@@ -47,22 +53,22 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  // -webkit-align-items: center;
-  // align-items: center;
-  // -ms-flex-align: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
-  text-align: center;
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-box-align: center;
+  // // -webkit-align-items: center;
+  // // align-items: center;
+  // // -ms-flex-align: center;
+  // -webkit-box-pack: center;
+  // -webkit-justify-content: center;
+  // -ms-flex-pack: center;
+  // justify-content: center;
+  // width: 100vw;
+  // min-height: 100vh;
+  // text-align: center;
 
-  margin-top: -70px;
+  // margin-top: -70px;
   z-index: -1;
 }

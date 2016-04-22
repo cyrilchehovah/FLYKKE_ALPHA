@@ -1,6 +1,105 @@
 // textarea:focus, input:focus{
 //     outline: none;
 // }
+.tabs {
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-user-cat {
+  margin: 10px;
+  padding: 0 10px;
+  line-height: 40px;
+  color: white;
+  font-size: 16px;
+  border: 0;
+  font-family: "varela round", "sans-serif";
+  background-color: transparent;
+  &:hover {
+    color: $yellow;
+  }
+  &.active {
+    color: $yellow;
+  }
+  &:active {
+    color: $yellow;
+  }
+  &:target {
+    color: $yellow;
+  }
+}
+
+.btn-edit {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: $yellow;
+    transition: all 0.15s ease;
+    transition-timing-function: ease-out;
+  }
+  &.active {
+    color: $yellow;
+
+  }
+  &:active {
+    color: $yellow;
+  }
+  &:target {
+    color: $yellow;
+  }
+}
+
+.btn-flykke-user-count {
+  display: inline-block;
+  margin: 0;
+}
+
+.btn-flykke-section {
+  background-color: white;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.btn-flykke {
+  background-color: $blue;
+  padding: 7px;
+  display: inline-block;
+  border-radius: 2px 0px 0px 2px;
+}
+
+
+.logo-mini {
+  width: 60px;
+}
+
+.category-tabs {
+  display: inline-block;
+}
+
+.category-tabs li {
+  display: table-cell;
+  margin: 10px;
+  padding: 0 10px;
+  line-height: 40px;
+  font-size: 16px;
+  border: 0;
+  font-family: "varela round", "sans-serif";
+  background-color: transparent;
+  .active {
+    color: $yellow;
+    box-shadow: none;
+    border-bottom: 1px solid $yellow;
+  }
+}
+
+.category-tabs li a .active {
+  color: $yellow;
+  box-shadow: none;
+  border-bottom: 1px solid $yellow;
+  touch-action: none;
+}
+
+
 
 .btn-facebook {
   width: 50%;

@@ -1,20 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <%= link_to "All", root_path, id: "all-cat", class: "navbar-wagon-button btn post-category" %>
-      <%= link_to root_path, id: "charity-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-globe"></i> Charity
-      <% end %>
-      <%= link_to root_path, id: "food-cat", class: "navbar-wagon-button btn post-category" do %>
-        <%= image_tag("recipe.png", width: '16px', color: 'white', class: 'icon-recipe') %> Food
-      <% end %>
-      <%= link_to root_path, id: "lifestyle-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-camera"></i> Lifestyle
-      <% end %>
-      <%= link_to root_path, id: "travel-cat", class: "navbar-wagon-button btn post-category" do %>
-        <%= image_tag("palm.png", width: '16px', height: '20px', class: 'icon-palm') %> Travel
-      <% end %>
-
       <%= render 'shared/interests/interest_newsfeed', posts: @posts %>
     </div>
   </div>

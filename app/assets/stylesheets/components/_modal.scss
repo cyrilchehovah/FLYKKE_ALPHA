@@ -55,6 +55,10 @@
 .modal-dialog {
   width: 45%;
   margin-top: 100px;
+  &-devise {
+    font-family: "varela round", "sans-serif";
+    color: $blue;
+  }
 }
 
 .modal-header {
@@ -74,6 +78,10 @@
   padding-left: 10px;
   padding: 0px;
   margin: -40px;
+  &-devise {
+    box-shadow: none;
+    border: 1px solid #61c8f2;
+  }
 }
 
 .modal-body {
@@ -118,4 +126,36 @@
     margin: auto;
 
   }
+}
+
+
+// ---------------------------------------
+
+.devise-h2 {
+  color: $dark-blue;
+  font-size: 34px;
+}
+
+.devise-p {
+  color: $blue;
+  font-size: 20px;
+}
+
+.checkbox-devise {
+  color: $blue;
+  text-align: center;
+  font-family: "open-sans", "helvetica", "sans-serif";
+}
+
+.form-actions-devise {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal-footer-devise {
+  text-align: center;
+}
+
+.navbar-wagon-link-devise {
+  color: $blue;
 }

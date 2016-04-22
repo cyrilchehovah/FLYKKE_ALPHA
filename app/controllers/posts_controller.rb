@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     search_string = params[:post][:url]
     @page = MetaInspector.new(search_string)
     @interest = params[:interest]
-    @post = Post.new(title: @page.best_title, interest: @page.interest, description: @page.description, graphic_content: @page.images.best, url: @page.url, site_name: @page.meta['og:site_name'])
+    @post = Post.new(title: @page.best_title, interest: @interest, description: @page.description, graphic_content: @page.images.best, url: @page.url, site_name: @page.meta['og:site_name'])
     # render new_post_path
   end
 

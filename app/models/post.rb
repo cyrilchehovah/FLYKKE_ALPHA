@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  belongs_to :interest
   # tracked only: [:create, :flykke], owner: Proc.new{ |controller, model| model.user }
   # include Shared::Callbacks
   acts_as_votable

@@ -14,18 +14,22 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+    <div class="background">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
       <%= render 'welcome/sign_up_modal' %>
       <%= render "welcome/login_modal" %>
       <%= render "welcome/forgot_password_modal" %>
-      <%= render "posts/create_modal" %>
-      <div class="background">
+      <% if @post %>
+        <%= render "posts/create_modal" %>
+        <%= render "posts/register_modal" %>
+      <% end %>
+
         <div id="newsfeed">
           <%= yield %>
           <%= javascript_include_tag 'application' %>
           <%= yield(:after_js) %>
         </div>
-      </div>
+    </div>
   </body>
 </html>

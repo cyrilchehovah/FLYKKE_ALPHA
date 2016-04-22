@@ -8,6 +8,11 @@
   border: none;
   background-color: transparent;
   color: $dark-red;
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: none;
   &-danger {
     color: $dark-red;
   }

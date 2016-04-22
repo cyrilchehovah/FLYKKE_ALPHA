@@ -6,7 +6,6 @@ class LikesController < ApplicationController
   def flykke
     @post = Post.find(params[:id])
     @post.liked_by current_user, :vote => 'flykke', :vote_scope => 'flykke'
-    @post.create_activity(:flykke, owner: current_user)
     redirect_to :back
   end
 end

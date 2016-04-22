@@ -1,0 +1,32 @@
+<div class="modal fade in" id="register">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Post a new creation</h2>
+      </div>
+      <div class="modal-body">
+        <p class="devise-p">In order to share contents on Flykke, you need to be logged in!</p>
+
+        <!-- choose a category for the post -->
+        <div class="row form-actions form-actions-devise devise-h2">
+          <div class="modal-footer">
+            <div class= "text-center" >
+              <%= link_to "Login", "#login", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-link navbar-wagon-link-devise" %>
+              |
+              <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-link navbar-wagon-link-devise" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

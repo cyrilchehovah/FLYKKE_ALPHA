@@ -1,63 +1,61 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <!--     Topsection : cover -->
-    <div class="col-lg-12 profile-topsection-cover no-padding">
-      <%= image_tag (@user.picture ? @user.picture : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
-      <div class="username-info">
-        <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
-      </div>
-      <div class="edit-user-info">
-        <% if is_current_user?(@user) %>
-          <%= link_to edit_user_path(current_user), class: "btn btn-default" do %>
-            <i class="fa fa-user"> Update profile</i>
+    <div class="col-xs-hidden col-md-3">
+      <div class="user-info">
+        <div class="user-info-about">
+          <% if is_current_user?(@user) %>
+            <!-- Profile picture and dropdown -->
+            <div class="navbar-wagon-item edit-user-info">
+              <div class="dropdown">
+                <i class="fa fa-pencil btn-edit" aria-hidden="true" class= "avatar dropdown-toggle", id= "navbar-wagon-menu", data-toggle= "dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                  <li>
+                    <%= link_to edit_user_path(current_user) do %>
+                      <i class="fa fa-user"> Update profile</i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to edit_user_registration_path do %>
+                      <i class="fa fa-cog"> Change your password</i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
           <% end %>
-          <%= link_to edit_user_registration_path, class: "btn btn-default" do %>
-            <i class="fa fa-cog"> Change your password</i>
-          <% end %>
-        <% end %>
+
+          <%= image_tag (@user.picture ? @user.picture : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
+          <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
+          <p><%= @user.about %></p>
+
+          <div class="user-info-flykke-section text-center">
+            <div class="btn-flykke-section">
+              <div class="btn-flykke">
+                <%= image_tag("bird-mini.png", :alt => "bird", :class => "logo-mini") %>
+              </div>
+              <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="user-info-nav">
-        <ul class="nav nav-pills pull-right user-info-nav-menu tabs">
-          <li role="presentation">
-            <%= link_to user_path(@user, :anchor => "tab1") do %>
+    </div>
+
+
+    <div class="col-xs-12 col-md-9">
+      <div class="user-info-nav text-center">
+        <ul class="tabs list-unstyled">
+          <li role="presentation" class="actions-inline">
+            <%= link_to user_path(@user, :anchor => "tab1"), class: "btn-user-cat" do %>
               Personnal catalog
-              <span class="badge"><%= @user.find_liked_items(:vote_scope => 'flykke').size %></span>
             <% end %>
           </li>
-          <li role="presentation">
-            <%= link_to user_path(@user, :anchor => "tab2") do %>
+          <li role="presentation" class="actions-inline">
+            <%= link_to user_path(@user, :anchor => "tab2"), class: "btn-user-cat" do %>
               Creations
-              <span class="badge"><%= @user.posts.size %></span>
             <% end %>
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="user-info col-lg-3">
-      <br>
-      <ul class="data-info">
-        <li>
-          <!-- flykkes given  -->
-          <%= link_to root_path, class: "text-center" do %>
-            <h4><%= @user.find_liked_items(:vote_scope => 'flykke').size %></h4>
-            <i class="fa fa-hand-spock-o "><br>Flykkes given</i>
-          <% end %>
-        </li>
-        <li>
-          <!-- flykkes received  -->
-          <%= link_to root_path, class: "text-center" do %>
-            <h4><%= @user.number_of_flykkes_received %></h4>
-            <i class="fa fa-hand-spock-o "><br>Flykkes received</i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-lg-8 img-user-info no-padding">
       <div id="tab1">
         <%= render 'shared/interests/interest_catalog', user: @user %>
       </div>
@@ -66,11 +64,18 @@
       <div id="tab2">
         <%= render 'shared/interests/interest_creations', user: @user %>
       </div>
-
     </div>
-
   </div>
 </div>
+
+
+
+
+
+
+
+
+
 <!--
     $('.post-category').removeClass('btn-primary');
     $(this).addClass('btn-primary'); -->

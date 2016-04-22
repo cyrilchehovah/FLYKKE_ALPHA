@@ -11,7 +11,11 @@
     <%= link_to t(".top_call_to_action", default: "Advertize on Flykke"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
 
     <!-- Post Creation -->
-    <%= link_to "Post a new creation", "#create", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% if user_signed_in? %>
+      <%= link_to "Post a new creation", "#create", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% else %>
+      <%= link_to "Post a new creation", "#register", "data-toggle" => "modal", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
 
 
 
@@ -26,11 +30,6 @@
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
             <li>

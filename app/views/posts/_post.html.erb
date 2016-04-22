@@ -1,56 +1,60 @@
 <!--  THE FLYKKE'S POST STRUCTURE  -->
-<div class="media col-xs-10 col-md-offset-2">
-  <div class="media-body">
-    <%= link_to post.url, :target => "_blank", class: "media-link" do %>
-      <section class="media-section">
-         <h2><%= post.title %> <span class="label label-primary pull-right"><%= post.interest %></h2></span>
-         <h4><i class="fa fa-clock-o"></i> <%= time_ago_in_words(post.created_at) %> ago</h4>
-      </section>
-      <section class="media-section">
-        <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
-      </section>
-      <section class="media-section">
-        <h3><%= post.description %></h3>
-        <% if post.site_name? %>
-          <h4><%= post.site_name %></h4>
-        <% else %>
-          <h4><%= post.url %></h4>
-        <% end %>
-      </section>
-    <% end %>
-  </div>
-
-<!-- media-aside / Flykke and Creator section -->
-  <div class="media-aside">
-    <!-- delete -->
-    <% if current_user == post.user %>
-      <%= link_to 'X', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "media-btn-delete" %>
-    <% end %>
-
-    <!-- Creator's Profile-section -->
-    <section class="media-section text-center">
-      <img src="<%= post.user.picture %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
-      <div style="margin-top:10px;">
-        <h1 style="display:inline;">By</h1>
-        <%= link_to user_path(post.user) do %>
-          <%= post.user.first_name %> <%= post.user.last_name %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="media">
+      <div class="media-body">
+        <%= link_to post.url, :target => "_blank", class: "media-link" do %>
+          <section class="media-section">
+             <h2><%= post.title %> <span class="label label-primary pull-right interest-tag"><%= post.interest %></h2></span>
+             <h4><i class="fa fa-clock-o"></i> <%= time_ago_in_words(post.created_at) %> ago</h4>
+          </section>
+          <section class="media-section">
+            <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
+          </section>
+          <section class="media-section">
+            <h3><%= post.description %></h3>
+            <% if post.site_name? %>
+              <h4><%= post.site_name %></h4>
+            <% else %>
+              <h4><%= post.url %></h4>
+            <% end %>
+          </section>
         <% end %>
       </div>
-      <div class="description">
-        <h1>About this creator</h1>
-        <!--       I use to design websites and applications
-        for the web. -->
-      </div>
-    </section>
 
-    <!-- Flykkes Section  -->
-    <section class="media-section ">
-      <div>
-        <%= render 'likes/form', post: post %>
-        <%= render 'shared/sharebar', post: post %>
+      <!-- media-aside / Flykke and Creator section -->
+        <div class="media-aside">
+          <!-- delete -->
+          <% if current_user == post.user %>
+            <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "media-btn-delete" do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+
+          <!-- Creator's Profile-section -->
+          <section class="media-section text-center">
+            <img src="<%= post.user.picture %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
+            <div style="margin-top:10px;">
+              <h1 style="display:inline;">By</h1>
+              <%= link_to user_path(post.user) do %>
+                <%= post.user.first_name %> <%= post.user.last_name %>
+              <% end %>
+            </div>
+            <div class="description">
+              <p><%= post.user.about %></p>
+              <!--       I use to design websites and applications
+              for the web. -->
+            </div>
+          </section>
+      <!-- Flykkes Section  -->
+          <%= render 'likes/form', post: post %>
+          <%= render 'shared/sharebar', post: post %>
       </div>
-    </section>
+
   </div>
 </div>
+
+
+
 
 

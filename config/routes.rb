@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   put 'posts/:id/flykke' => 'likes#flykke', as: :flykke
 
+  resources :users
+
 end

@@ -5,7 +5,7 @@
     </li>
     <li>
       <%= link_to user_path(user, :anchor => "cat-catalog-tab2"), class: "navbar-wagon-button btn post-category", id:"charity-cat" do %>
-        <i class="fa fa-globe"> Charity</i>
+        <i class="fa fa-globe"></i> Charity
       <% end %>
     </li>
     <li>
@@ -34,25 +34,25 @@
 </div>
 
 <div id="cat-catalog-tab2">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.category == 'Charity' }.each do |post| %>
+  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Charity' }.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
 </div>
 
 <div id="cat-catalog-tab3">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.category == 'Food' }.each do |post| %>
+  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Food' }.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
 </div>
 
 <div id="cat-catalog-tab4">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.category == 'Lifestyle' }.each do |post| %>
+  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Lifestyle' }.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
 </div>
 
 <div id="cat-catalog-tab5">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.category == 'Travel' }.each do |post| %>
+  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Travel' }.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
 </div>

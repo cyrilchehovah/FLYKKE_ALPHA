@@ -1,0 +1,14 @@
+.share-links {
+  align-items: center;
+}
+.share-link {
+  flex: 0 0 24%;
+  color: $blue;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  &:hover {
+    color: white;
+  }
+}

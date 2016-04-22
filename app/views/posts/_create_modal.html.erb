@@ -1,5 +1,3 @@
-
-
 <div class="modal fade in" id="create">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -10,18 +8,18 @@
       </div>
       <div class="modal-body">
         <!-- to review : connect the old form for below whith errors with the fields of the new form -->
-        <%= form_for(@post) do |f| %>
-          <% if @post.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-              <ul>
-              <% @post.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
+          <%= form_for(@post) do |f| %>
+            <% if @post.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+                <ul>
+                <% @post.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
 
         <!-- choose a category for the post -->
         <div class="row">
