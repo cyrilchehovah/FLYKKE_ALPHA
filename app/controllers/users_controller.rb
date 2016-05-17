@@ -22,6 +22,14 @@ class UsersController < ApplicationController
   def deactivate
   end
 
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
+    end
+  end
+
   def friends
     # @friends = @user.following_users.paginate(page: params[:page])
   end

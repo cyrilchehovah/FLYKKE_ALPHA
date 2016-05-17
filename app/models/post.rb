@@ -6,9 +6,20 @@ class Post < ActiveRecord::Base
 
   default_scope -> { order('created_at DESC') }
 
-  INTERESTS = %w(All Charity Food Society Travel)
+  INTERESTS = %w(All Charity Food Lifestyle Travel)
 
   validates :interest, inclusion: { in: INTERESTS }
   validates_presence_of :user
   validates_presence_of :url
+
+
+  # auto_html_for :content do
+  #   html_escape
+  #   image
+  #   youtube(width: 400, height: 250, autoplay: true)
+  #   link target: '_blank', rel: 'nofollow'
+  #   simple_format
+  # end
 end
+
+

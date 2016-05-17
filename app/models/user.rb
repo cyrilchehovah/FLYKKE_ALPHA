@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   validates_presence_of :first_name, :last_name, :email, :password
 
   acts_as_voter
@@ -28,8 +28,11 @@ class User < ActiveRecord::Base
 
   def number_of_flykkes_received
     array = self.posts.map { |post| [ post.get_likes(:vote_scope => 'flykke').size ] }
-    a = array.inject{|sum,x| sum + x }
-    return a.inject{|sum,x| sum + x }
+    if array.size != 0
+      a = array.inject{|sum,x| sum + x }
+      return a.inject{|sum,x| sum + x }
+    else return a = 0
+    end
   end
 end
 

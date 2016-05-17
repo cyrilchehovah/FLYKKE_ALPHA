@@ -34,10 +34,10 @@
 
         <!-- url to fill, then a preview of the post will append on the result div -->
         <div class="row">
-          <div class="text-center col-xs-6 col-md-offset-3">
+          <div class="text-center col-xs-10 col-md-offset-1">
             <h4>Enter the url of your creation</h4>
             <%= simple_form_for(@post, :url => new_preview_path, remote: true) do |f| %>
-              <%= f.input :url , required: true, autofocus: true, inline_label: true, label: false, placeholder: "http://...", input_html: { class: "actions-inline form-input-create" }%>
+              <%= f.input :url , required: true, autofocus: true, inline_label: true, label: false, placeholder: "http://...", input_html: { class: "actions-inline form-input form-input-create" }%>
               <%= hidden_field_tag :interest, nil, id: "preview_category" %>
               <%= f.submit 'load url', :id => 'submit_url', disabled: true, class: "actions-inline btn-confirm-sm"  %>
             <% end %>
@@ -52,7 +52,7 @@
 
         <div class="row">
           <div class="text-center">
-            <p>By clicking Submit your creation, you agree to be the creator of this content <br> and to the <a href="">Flykke Pages Terms</a>.</p>
+            <p>By clicking Submit your creation, you agree to be the rightful content creator <br> and to the <a href="" class="text-link">Flykke Pages Terms</a>.</p>
           </div>
         </div>
 

@@ -33,7 +33,9 @@
               <div class="btn-flykke">
                 <%= image_tag("bird-mini.png", :alt => "bird", :class => "logo-mini") %>
               </div>
-              <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
+              <% if @user.posts != nil %>
+                <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
+              <% end %>
             </div>
           </div>
         </div>

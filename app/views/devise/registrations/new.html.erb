@@ -21,10 +21,10 @@
           <%= f.error_notification %>
           <div class="form-inputs text-center">
             <%= f.input :first_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "first name", input_html: { class: "form-input" } %>
-            <%= f.input :last_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "last name", input_html: { class: "form-input" } %>
-            <%= f.input :email, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "email", input_html: { class: "form-input" } %>
-            <%= f.input :password, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "password", input_html: { class: "form-input" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-            <%= f.input :password_confirmation, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "Password confirmation", input_html: { class: "form-input" } %>
+            <%= f.input :last_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'last name', placeholder: "last name", input_html: { class: "form-input" } %>
+            <%= f.input :email, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'email', placeholder: "email", input_html: { class: "form-input" } %>
+            <%= f.input :password, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'password', placeholder: "password", input_html: { class: "form-input" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'password confirmation', placeholder: "Password confirmation", input_html: { class: "form-input" } %>
           </div>
           <div class="form-actions form-actions-devise devise-h2 text-center">
             <%= f.button :submit, "Sign up", class: "btn-confirm"  %>
