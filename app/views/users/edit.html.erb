@@ -6,41 +6,47 @@
     </div>
     <div class="modal-body">
       <%= form_for @user do |f| %>
-        <div class="form-inputs text-center">
-          <%= f.label :picture %>
+        <div class="form-inputs text-center margin-bottom">
+          <div class="relative">
+            <%= image_tag (@user.picture + "?type=large" ? @user.picture + "?type=large" : @user.picture.url(:thumb)), class: "avatar-info relative", alt: "user-picture" %>
+            <div class="navbar-wagon-item pull-right-picture">
+              <div class="dropdown">
+                <i class="fa fa-2x fa-camera btn-edit" aria-hidden="true" class= "avatar dropdown-toggle", id= "navbar-wagon-menu", data-toggle= "dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                  <li>
+                    <%= f.file_field :picture, class: "text-center" %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= simple_form_for @user do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :first_name, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "first name", input_html: { class: "form-input" } %>
+          <%= f.input :last_name, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "last name", input_html: { class: "form-input" } %>
+          <%= f.input :email, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "email", input_html: { class: "form-input" } %>
+          <%= f.input :about, :as => :text, autofocus: true, inline_label: true, label: false, inline_label: 'about', placeholder: "About", input_html: { class: "form-input" } %>
+        </div>
+        <div class="form-inputs text-center text-link">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to edit_user_registration_path do %>
+            Change your password
+          <% end %>
+          <% end -%>
           <br>
-          <%= image_tag (@user.picture ? @user.picture : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
+        </div>
+        <div class="form-actions text-center">
           <br>
-          <%= f.file_field :picture, class: "text-center" %>
-          <br>
-        </div>
-        <div class="form-inputs text-center">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, placeholder: 'First Name', class: "form-input" %>
-        </div>
-        <br>
-        <div class="form-inputs text-center">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, placeholder: 'Last Name', class: "form-input" %>
-        </div>
-        <br>
-        <div class="form-inputs text-center">
-          <%= f.label :about %>
-          <%= f.text_area :about, placeholder: 'About', class: "form-input" %>
-        </div>
-        <div class="form-actions form-actions-devise devise-h2 text-center">
-          <%= submit_tag 'Save change', class: 'btn-confirm' %>
-          or
-          <%= link_to "Back", :back %>
+          <%= f.button :submit, "Update", class: "actions-inline btn-confirm"  %>
+          <p class="actions-inline">or</p>
+          <%= link_to "Back", :back, class: "text-link" %>
         </div>
       <% end %>
     </div>
     <div class="modal-footer">
-      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <%= link_to edit_user_registration_path do %>
-        Change your password
-      <% end %>
-      <% end -%>
     </div>
   </div>
 </div>

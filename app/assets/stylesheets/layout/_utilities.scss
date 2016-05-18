@@ -18,8 +18,18 @@
   position: absolute;
   top: 0;
   right: 0;
+  &-picture {
+    position: absolute;
+    right: 23%;
+    top: 2%;
+    z-index: 1000;
+  }
 }
 
+
+.relative {
+  position: relative;
+}
 
 .text-left {
   text-align: left;
@@ -33,6 +43,10 @@
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
 }
 
 // Backgrounds

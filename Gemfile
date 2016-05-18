@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'metainspector'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'social-share-button', '~> 0.1.6'
 
 gem 'sass-rails'
 gem 'jquery-rails'

@@ -11,7 +11,7 @@
                 <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                   <li>
                     <%= link_to edit_user_path(current_user) do %>
-                      <i class="fa fa-user"></i> Update profile
+                      <i class="fa fa-user"></i> Edit profile
                     <% end %>
                   </li>
                   <li>
@@ -31,7 +31,7 @@
           <div class="user-info-flykke-section text-center">
             <div class="btn-flykke-section">
               <div class="btn-flykke">
-                <%= image_tag("bird-mini.png", :alt => "bird", :class => "logo-mini") %>
+                <%= image_tag("logo-hand.png", :alt => "bird", :class => "logo-mini") %>
               </div>
               <% if @user.posts != nil %>
                 <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
