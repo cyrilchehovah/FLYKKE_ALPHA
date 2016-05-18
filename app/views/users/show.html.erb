@@ -24,7 +24,7 @@
             </div>
           <% end %>
 
-          <%= image_tag (@user.picture ? @user.picture : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
+          <%= image_tag (@user.picture + "?type=large" ? @user.picture + "?type=large" : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
           <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
           <p><%= @user.about %></p>
 
