@@ -34,6 +34,10 @@
   &:target {
     color: $yellow;
   }
+  &:focus {
+    color: $yellow;
+    outline: none;
+  }
 }
 
 .btn-edit {
@@ -54,17 +58,27 @@
   &:target {
     color: $yellow;
   }
+  &:focus {
+    color: $yellow;
+    outline: none;
+  }
 }
 
 .btn-flykke-user-count {
   display: inline-block;
   margin: 0;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-flykke-section {
   background-color: white;
   display: inline-block;
   border-radius: 2px;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-flykke {
@@ -72,6 +86,18 @@
   padding: 7px;
   display: inline-block;
   border-radius: 2px 0px 0px 2px;
+  &:focus {
+    outline: none;
+  }
+  &-preview {
+    background-color: $blue;
+    padding: 4px;
+    display: inline-block;
+    border-radius: 2px 0px 0px 2px;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 
@@ -96,6 +122,9 @@
     color: $yellow;
     box-shadow: none;
     border-bottom: 1px solid $yellow;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
@@ -132,6 +161,9 @@
   border-radius: 5px;
   color: white;
   padding: 12px;
+  &:focus {
+    outline: none;
+  }
   &-sm {
     padding: 5px;
     font-size: 16px;
@@ -139,6 +171,9 @@
     border: none;
     border-radius: 5px;
     color: white;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -168,6 +203,9 @@
   &:target {
     color: $yellow;
     border-bottom: 1px solid $yellow;
+  }
+  &:focus {
+    outline: none;
   }
 }
 

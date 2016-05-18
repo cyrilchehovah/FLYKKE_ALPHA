@@ -61,10 +61,32 @@
   font-size: 16px;
   border-bottom: 1px solid white;
   font-family: "varela round", "sans-serif";
+  &:hover {
+    color: $yellow;
+    border-bottom-color: $yellow;
+  }
+  &.active {
+    color: $yellow;
+    border-bottom-color: $yellow;
+
+  }
+  &:active {
+    color: $yellow;
+    border-bottom-color: $yellow;
+  }
+  &:target {
+    color: $yellow;
+    border-bottom-color: $yellow;
+  }
+
+  &:focus {
+    color: $yellow;
+    border-bottom-color: $yellow;
+    outline: none;
+  }
 }
 .navbar-wagon-button:hover {
-  color: $yellow;
-  border-bottom-color: $yellow;
+
 }
 
 /* Navbar search form */

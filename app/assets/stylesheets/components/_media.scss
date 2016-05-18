@@ -103,6 +103,14 @@
       padding: 0px 13px 0px 10px;
       font-family: "varela round", "sans-serif";
       vertical-align: middle;
+      &-preview {
+        padding: 0px 4px 0px 0px;
+        font-size: 11px;
+        display: inline-block;
+        color: $blue;
+        font-family: "varela round", "sans-serif";
+        vertical-align: middle;
+      }
     }
 
   h4 {
@@ -111,4 +119,39 @@
     font-size: 13px;
     color: $gray-light;
   }
+}
+
+
+
+.media-preview {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#preview-h1 {
+  font-size: 11px;
+}
+
+#preview-h2 {
+  font-size: 12px;
+  padding-bottom: 0px;
+}
+
+#preview-h3 {
+  font-size: 11px;
+}
+
+#preview-h4 {
+  font-size: 11px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+}
+
+.logo-mini-preview {
+  width: 30px;
+}
+
+.media-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

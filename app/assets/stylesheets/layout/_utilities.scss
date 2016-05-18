@@ -3,6 +3,13 @@
  * These are examples of utilities classes
  * Feel free to change them and create your own
  * ------------------------------------- */
+
+ .not-active {
+    pointer-events: none;
+    cursor: default;
+ }
+
+
 .total-width {
   width: 100%;
 }
@@ -11,6 +18,11 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+
+.text-left {
+  text-align: left;
 }
 
 .actions-inline {

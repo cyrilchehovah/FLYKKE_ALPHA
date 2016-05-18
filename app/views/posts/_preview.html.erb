@@ -1,30 +1,72 @@
-<div class="row">
-  <div class="media col-xs-8 col-md-offset-2">
-    <div class="media-body">
-      <section class="media-section">
-         <h3><%= @page.best_title %></h3>
-      </section>
-      <section class="media-section">
-         <img src="<%= page.images.best %>" alt="book-cover" class="result-img img-responsive">
-      </section>
-      <section class="media-section">
-        <h4><%= @page.description %></h4>
-      </section>
-    </div>
-    <div class="media-aside">
-      <section class="media-section">
-        <img src="<%= current_user.picture %>" alt="book-cover" class="result-img img-responsive">
-        ...
-      </section>
-      <section class="media-section">
-        <h2>Share</h2>
-        ...
-      </section>
-      <section class="media-section">
-        <h2>382 upvotes</h2>
-        ...
-      </section>
+<div class="media-preview">
+  <div class="row">
+    <div class="media col-xs-8 col-md-offset-2">
+      <div class="media">
+        <div class="media-body">
+          <section class="media-section text-left">
+             <h2 id="preview-h2"><%= @page.best_title %></h2></span>
+             <h4 id="preview-h4"><i class="fa fa-clock-o"></i> less than a minute ago</h4>
+          </section>
+          <section class="media-section">
+            <img src="<%= page.images.best %>" alt="post-image" class="post-img img-responsive">
+          </section>
+          <section class="media-section text-left">
+            <h3 id="preview-h3"><%= @page.description %></h3>
+            <% if @page.meta['og:site_name'] != nil %>
+              <h4 id="preview-h4"><%= @page.meta['og:site_name'] %></h4>
+            <% else %>
+              <h4 id="preview-h4"><%= @page.url %></h4>
+            <% end %>
+          </section>
+        </div>
+        <!-- media-aside / Flykke and Creator section -->
+        <div class="media-aside">
+          <!-- delete -->
+          <i class="fa fa-times media-btn-delete" aria-hidden="true"></i>
+          <!-- Creator's Profile-section -->
+          <section class="media-section text-center">
+            <img src="<%= current_user.picture + "?type=large" %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
+            <div style="margin-top:10px;font-size: 11px;">
+              <h1 id="preview-h1" style="display:inline;">By</h1>
+              <%= current_user.first_name %> <%= current_user.last_name %>
+            </div>
+            <div class="description">
+              <p><%= current_user.about %></p>
+            </div>
+          </section>
+          <!-- Flykkes Section  -->
+          <div class="post-flykke-section text-center">
+            <div class="btn-flykke-section">
+              <div class= "btn-flykke-preview">
+                <%= image_tag("logo-hand.png", :alt => "bird", :class => "logo-mini-preview") %>
+              </div>
+              <h3 class="btn-flykke-vote-count-preview"> 0</h3>
+            </div>
+          </div>
+
+          <div class="post-share">
+            <div class="share-links text-center">
+              <a href="#" class="share-link bg-facebook not-active">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a href="#" class="share-link bg-twitter not-active">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#" class="share-link bg-email not-active">
+                <i class="fa fa-envelope-o"></i>
+              </a>
+              <a href="#" class="share-link bg-text not-active">
+                <i class="fa fa-link"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
 

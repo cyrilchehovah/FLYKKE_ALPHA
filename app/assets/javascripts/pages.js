@@ -13,3 +13,4 @@ $('.modal').on('show.bs.modal', function(e) {
     return false;
   }
 });
+

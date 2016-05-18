@@ -1,13 +1,13 @@
 <%= form_for post do |f| %>
-  <%= f.text_field :title, class: "hidden" %>
-  <%= f.text_field :description, class: "hidden" %>
-  <%= f.text_field :interest, class: "hidden" %>
-  <%= f.text_field :url, class: "hidden" %>
-  <%= f.text_field :graphic_content, class: "hidden" %>
+  <%= f.text_field :title, class: "hidden", :required => true%>
+  <%= f.text_field :description, class: "hidden", :required => true %>
+  <%= f.text_field :interest, class: "hidden", :required => true %>
+  <%= f.text_field :url, class: "hidden", :required => true %>
+  <%= f.text_field :graphic_content, class: "hidden", :required => true %>
   <%= f.text_field :site_name, class: "hidden" %>
   <div class="row">
     <div class="text-center col-xs-6 col-md-offset-3">
-       <button type="submit" id="post" class="actions-inline btn btn-default btn-confirm">Submit your creation</button>
+       <button type="submit" id="submit_post" class="actions-inline btn-confirm" >Submit your creation</button>
        <p class="actions-inline">or</p>
        <p class="actions-inline"><a href="#" data-dismiss="modal" class="text-link">Close</a></p>
     </div>
