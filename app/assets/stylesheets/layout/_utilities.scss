@@ -4,6 +4,25 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.scrollable {
+  position: absolute;
+  overflow-y: auto;
+  height: 79%;
+  width: 100%;
+  &-user {
+    height: 510px;
+    position: absolute;
+    overflow-y: auto;
+    width: 100%;
+  }
+}
+
  .not-active {
     pointer-events: none;
     cursor: default;
@@ -74,13 +93,16 @@ body {
 
 .background {
   background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient($blue 30%, white 70%); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($blue 30%, white 70%); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($blue 30%, white 70%); /* For Firefox 3.6 to 15 */
-  background: linear-gradient($blue 30%, white 70%); /* Standard syntax */
+  background: -webkit-linear-gradient($blue 5%, white 40%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($blue 5%, white 40%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($blue 5%, white 40%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($blue 5%, white 40%); /* Standard syntax */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 
   // display: -webkit-box;
   // display: -webkit-flex;
@@ -99,5 +121,5 @@ body {
   // text-align: center;
 
   // margin-top: -70px;
-  z-index: -1;
+  z-index: 1041;
 }

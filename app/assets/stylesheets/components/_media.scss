@@ -18,7 +18,8 @@
   &-body {
     background: white;
     flex: 1 1 auto;
-    position: relative;
+    position: initial;
+    border-radius: 5px 0px 0px 5px;
   }
   &-btn-delete {
     position: absolute;
@@ -48,6 +49,7 @@
     align-self: stretch;
     background: $white-blue;
     position: relative;
+    border-radius: 0px 5px 5px 0px;
     & a {
       font-size: 13px;
       text-decoration: none;

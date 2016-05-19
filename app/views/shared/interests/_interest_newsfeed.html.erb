@@ -1,61 +1,75 @@
-<div class="text-center">
-  <ul class="category-tabs list-unstyled">
-    <li>
-      <%= link_to "All", root_path(:anchor => "cat-newsfeed-tab1"), class: "navbar-wagon-button btn post-category", id:"all-cat" %>
-    </li>
-    <li>
-      <%= link_to root_path(:anchor => "cat-newsfeed-tab2"), class: "navbar-wagon-button btn post-category", id:"charity-cat" do %>
-        <i class="fa fa-globe"></i> Charity
-      <% end %>
-    </li>
-    <li>
-      <%= link_to root_path(:anchor => "cat-newsfeed-tab3"), class: "navbar-wagon-button btn post-category", id:"food-cat" do %>
-        <%= image_tag("recipe.png", width: '16px', color: 'white', class: 'icon-recipe') %> Food
-      <% end %>
-    </li>
-    <li>
-      <%= link_to root_path(:anchor => "cat-newsfeed-tab4"), id: "lifestyle-cat", class: "navbar-wagon-button btn post-category" do %>
-        <i class="fa fa-newspaper-o"></i> Lifestyle
-      <% end %>
-    </li>
-    <li>
-      <%= link_to root_path(:anchor => "cat-newsfeed-tab5"), id: "travel-cat", class: "navbar-wagon-button btn post-category" do %>
-        <%= image_tag("palm.png", width: '16px', height: '20px', class: 'icon-palm') %> Travel
-      <% end %>
-    </li>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+     <div class="text-center ">
+       <ul class="category-tabs list-unstyled">
+         <li>
+           <%= link_to "All", root_path(:anchor => "cat-newsfeed-tab1"), class: "navbar-wagon-button btn post-category", id:"all-cat" %>
+         </li>
+         <li>
+           <%= link_to root_path(:anchor => "cat-newsfeed-tab2"), class: "navbar-wagon-button btn post-category", id:"charity-cat" do %>
+             <i class="fa fa-globe"></i> Charity
+           <% end %>
+         </li>
+         <li>
+           <%= link_to root_path(:anchor => "cat-newsfeed-tab3"), class: "navbar-wagon-button btn post-category", id:"food-cat" do %>
+             <%= image_tag("recipe.png", width: '16px', color: 'white', class: 'icon-recipe') %> Food
+           <% end %>
+         </li>
+         <li>
+           <%= link_to root_path(:anchor => "cat-newsfeed-tab4"), id: "lifestyle-cat", class: "navbar-wagon-button btn post-category" do %>
+             <i class="fa fa-newspaper-o"></i> Lifestyle
+           <% end %>
+         </li>
+         <li>
+           <%= link_to root_path(:anchor => "cat-newsfeed-tab5"), id: "travel-cat", class: "navbar-wagon-button btn post-category" do %>
+             <%= image_tag("palm.png", width: '16px', height: '20px', class: 'icon-palm') %> Travel
+           <% end %>
+         </li>
+       </ul>
+     </div>
+    </div>
+  </div>
 </div>
 
-<!-- Attention : les id activities ont été enlevé des 6tabs suivantes!  -->
-<div id="cat-newsfeed-tab1">
-  <% posts.each do |post| %>
-    <%= render 'posts/post', post: post %>
-  <% end %>
-</div>
 
-<div id="cat-newsfeed-tab2">
-    <% posts.where(interest: 'Charity').each do |post| %>
+
+
+
+<div class="scrollable">
+  <!-- Attention : les id activities ont été enlevé des 6tabs suivantes!  -->
+  <div id="cat-newsfeed-tab1">
+    <% posts.each do |post| %>
       <%= render 'posts/post', post: post %>
     <% end %>
+  </div>
+
+  <div id="cat-newsfeed-tab2">
+      <% posts.where(interest: 'Charity').each do |post| %>
+        <%= render 'posts/post', post: post %>
+      <% end %>
+  </div>
+
+  <div id="cat-newsfeed-tab3">
+    <% posts.where(interest: 'Food').each do |post| %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  </div>
+
+  <div id="cat-newsfeed-tab4">
+    <% posts.where(interest: 'Lifestyle').each do |post| %>
+       <%= render 'posts/post', post: post %>
+    <% end %>
+  </div>
+
+  <div id="cat-newsfeed-tab5">
+    <% posts.where(interest: 'Travel').each do |post| %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  </div>
 </div>
 
-<div id="cat-newsfeed-tab3">
-  <% posts.where(interest: 'Food').each do |post| %>
-    <%= render 'posts/post', post: post %>
-  <% end %>
-</div>
 
-<div id="cat-newsfeed-tab4">
-  <% posts.where(interest: 'Lifestyle').each do |post| %>
-     <%= render 'posts/post', post: post %>
-  <% end %>
-</div>
-
-<div id="cat-newsfeed-tab5">
-  <% posts.where(interest: 'Travel').each do |post| %>
-    <%= render 'posts/post', post: post %>
-  <% end %>
-</div>
 
 
 <!-- ---------------------------------------------------------------------------------------- -->

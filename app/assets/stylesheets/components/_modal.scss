@@ -44,6 +44,7 @@
   font-family: "varela round", "sans-serif";
   color: $blue;
   text-align: center;
+  z-index: 2000;
   & h2 {
     color: $dark-blue;
   }
@@ -55,6 +56,7 @@
 .modal-dialog {
   width: 45%;
   margin-top: 100px;
+    z-index: 2000;
   &-devise {
     font-family: "varela round", "sans-serif";
     color: $blue;

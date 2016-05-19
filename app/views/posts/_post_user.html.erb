@@ -5,7 +5,7 @@
       <div class="media">
         <div class="media-body">
           <%= link_to post.url, :target => "_blank", class: "media-link" do %>
-            <section class="media-section">
+            <section class="media-section relative">
                <h2><%= post.title %> <span class="label label-primary pull-right interest-tag"><%= post.interest %></h2></span>
                <h4><i class="fa fa-clock-o"></i> <%= time_ago_in_words(post.created_at) %> ago</h4>
             </section>

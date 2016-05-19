@@ -27,34 +27,36 @@
 </div>
 
 
-<div id="cat-catalog-tab1">
-  <% @user.find_liked_items(:vote_scope => 'flykke').each do |post| %>
-    <%= render 'posts/post_user', post: post %>
-  <% end %>
-</div>
+<div class="scrollable-user">
+  <div id="cat-catalog-tab1">
+    <% @user.find_liked_items(:vote_scope => 'flykke').each do |post| %>
+      <%= render 'posts/post_user', post: post %>
+    <% end %>
+  </div>
 
-<div id="cat-catalog-tab2">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Charity' }.each do |post| %>
-    <%= render 'posts/post_user', post: post %>
-  <% end %>
-</div>
+  <div id="cat-catalog-tab2">
+    <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Charity' }.each do |post| %>
+      <%= render 'posts/post_user', post: post %>
+    <% end %>
+  </div>
 
-<div id="cat-catalog-tab3">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Food' }.each do |post| %>
-    <%= render 'posts/post_user', post: post %>
-  <% end %>
-</div>
+  <div id="cat-catalog-tab3">
+    <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Food' }.each do |post| %>
+      <%= render 'posts/post_user', post: post %>
+    <% end %>
+  </div>
 
-<div id="cat-catalog-tab4">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Lifestyle' }.each do |post| %>
-    <%= render 'posts/post_user', post: post %>
-  <% end %>
-</div>
+  <div id="cat-catalog-tab4">
+    <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Lifestyle' }.each do |post| %>
+      <%= render 'posts/post_user', post: post %>
+    <% end %>
+  </div>
 
-<div id="cat-catalog-tab5">
-  <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Travel' }.each do |post| %>
-    <%= render 'posts/post_user', post: post %>
-  <% end %>
+  <div id="cat-catalog-tab5">
+    <% @user.find_liked_items(:vote_scope => 'flykke').select { |m| m.interest == 'Travel' }.each do |post| %>
+      <%= render 'posts/post_user', post: post %>
+    <% end %>
+  </div>
 </div>
 
 

@@ -17,9 +17,9 @@ if ($('#description-limit').text().length > 150) {
   myDiv.text(myDiv.text().substring(0,150) + "...")
 }
 
-var myDiv2 = $('#preview-h3');
-if ($('#preview-h3').text().length > 150) {
-  myDiv2.text(myDiv2.text().substring(0,150) + "...")
-  console.log($('#preview-h3').text().length)
-}
+// var myDiv2 = $('#preview-h3');
+// if ($('#preview-h3').text().length > 150) {
+//   myDiv2.text(myDiv2.text().substring(0,150) + "...")
+//   console.log($('#preview-h3').text().length)
+// }
 
