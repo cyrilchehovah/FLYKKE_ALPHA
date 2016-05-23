@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  # mount_uploader :picture, AvatarUploader
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -21,6 +23,11 @@ class User < ActiveRecord::Base
       user.last_name = auth.info.last_name
       user.picture = auth.info.image
       user.about = auth.info.about
+      user.gender = auth.info.gender
+      user.location = auth.info.location
+      user.age_range = auth.info.age_range
+      user.birthday = auth.info.birthday
+      user.likes = auth.info.likes
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end

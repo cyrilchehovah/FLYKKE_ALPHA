@@ -25,7 +25,7 @@
           <i class="fa fa-times media-btn-delete" aria-hidden="true"></i>
           <!-- Creator's Profile-section -->
           <section class="media-section text-center">
-            <img src="<%= current_user.picture + "?type=large" %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
+            <img src="<%= current_user.picture %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
             <div style="margin-top:10px;font-size: 11px;">
               <h1 id="preview-h1" style="display:inline;">By</h1>
               <%= current_user.first_name %> <%= current_user.last_name %>

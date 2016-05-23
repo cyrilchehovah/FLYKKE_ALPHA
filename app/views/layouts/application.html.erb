@@ -16,7 +16,6 @@
   <body>
     <div class="background">
       <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
       <%= render 'welcome/sign_up_modal' %>
       <%= render "welcome/login_modal" %>
       <%= render "welcome/forgot_password_modal" %>
@@ -25,11 +24,15 @@
         <%= render "posts/register_modal" %>
       <% end %>
 
-        <div id="newsfeed">
-          <%= yield %>
-          <%= javascript_include_tag 'application' %>
-          <%= yield(:after_js) %>
-        </div>
+      <div id="newsfeed">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+        <%= javascript_include_tag 'application' %>
+        <%= yield(:after_js) %>
+      </div>
     </div>
+
+
+
   </body>
 </html>
