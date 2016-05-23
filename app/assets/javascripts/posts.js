@@ -12,8 +12,8 @@
 //       $("#submit_post").prop('disabled', false);
 //   }
 
-var myDiv = $('#description-limit');
-if ($('#description-limit').text().length > 150) {
+var myDiv = $('.description-limit');
+if ($('.description-limit').text().length > 150) {
   myDiv.text(myDiv.text().substring(0,150) + "...")
 }
 

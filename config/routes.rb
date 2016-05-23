@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   resources :posts
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: 'pages#home'
@@ -8,5 +9,7 @@ Rails.application.routes.draw do
   put 'posts/:id/flykke' => 'likes#flykke', as: :flykke
 
   resources :users
+
+  resources :contacts, only: [:new, :create]
 
 end

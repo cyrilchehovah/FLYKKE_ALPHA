@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_many :posts, dependent: :destroy
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name, :email
 
   acts_as_voter
 
-  # mount_uploader :picture, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

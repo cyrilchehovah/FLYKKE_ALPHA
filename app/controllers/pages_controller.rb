@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def home
     @post = Post.new
-    @posts = Post.all
+    @posts = Post.where(status: :validated)
   end
 
   def new_preview

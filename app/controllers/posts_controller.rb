@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @category = params[:cat]
-    @posts = Post.all
+    @posts = Post.where(status: :validated)
     @post = Post.new
   end
 
