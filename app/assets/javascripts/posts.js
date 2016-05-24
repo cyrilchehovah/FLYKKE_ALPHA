@@ -17,6 +17,16 @@ if ($('.description-limit').text().length > 150) {
   myDiv.text(myDiv.text().substring(0,150) + "...")
 }
 
+var description = $('#media-about');
+if ($('#media-about').text().length > 150) {
+  description.text(description.text().substring(0,150) + "...")
+}
+
+var descriptionUser = $('#media-about-user');
+if ($('#media-about-user').text().length > 150) {
+  descriptionUser.text(descriptionUser.text().substring(0,150) + "...")
+}
+
 // var myDiv2 = $('#preview-h3');
 // if ($('#preview-h3').text().length > 150) {
 //   myDiv2.text(myDiv2.text().substring(0,150) + "...")

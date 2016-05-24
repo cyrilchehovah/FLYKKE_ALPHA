@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_many :posts, dependent: :destroy
+  has_many :views
+
   validates_presence_of :first_name, :last_name, :email
 
   acts_as_voter

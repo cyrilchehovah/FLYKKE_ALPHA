@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523101201) do
+ActiveRecord::Schema.define(version: 20160524094501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,37 @@ ActiveRecord::Schema.define(version: 20160523101201) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "ad_interests", force: :cascade do |t|
+    t.string   "interest"
+    t.integer  "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ad_interests", ["ad_id"], name: "index_ad_interests_on_ad_id", using: :btree
+
+  create_table "ads", force: :cascade do |t|
+    t.string   "title"
+    t.string   "graphic_content"
+    t.string   "description"
+    t.string   "url"
+    t.integer  "advertiser_id"
+    t.integer  "duration"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "ads", ["advertiser_id"], name: "index_ads_on_advertiser_id", using: :btree
+
+  create_table "advertisers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "about"
+    t.string   "url"
+    t.string   "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -93,6 +124,19 @@ ActiveRecord::Schema.define(version: 20160523101201) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "views", force: :cascade do |t|
+    t.integer  "ad_id"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.boolean  "donation_complete", default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "views", ["ad_id"], name: "index_views_on_ad_id", using: :btree
+  add_index "views", ["post_id"], name: "index_views_on_post_id", using: :btree
+  add_index "views", ["user_id"], name: "index_views_on_user_id", using: :btree
+
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
     t.string   "votable_type"
@@ -108,5 +152,10 @@ ActiveRecord::Schema.define(version: 20160523101201) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "ad_interests", "ads"
+  add_foreign_key "ads", "advertisers"
   add_foreign_key "posts", "users"
+  add_foreign_key "views", "ads"
+  add_foreign_key "views", "posts"
+  add_foreign_key "views", "users"
 end

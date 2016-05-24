@@ -13,8 +13,6 @@ ActiveAdmin.register Post do
 #   permitted
 # end
   form do |f|
-
-
       f.inputs "bloc1" do
         f.input :status, as: :select,  collection: [:pending, :validated]
         f.input :title

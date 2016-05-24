@@ -13,7 +13,7 @@
               <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
             </section>
             <section class="media-section">
-              <h3 id="description-limit"><%= post.description %></h3>
+              <h3 class="description-limit"><%= post.description %></h3>
               <% if post.site_name? %>
                 <h4><%= post.site_name %></h4>
               <% else %>
@@ -41,11 +41,7 @@
                 <%= post.user.first_name %> <%= post.user.last_name %>
               <% end %>
             </div>
-            <div class="description">
-              <p><%= post.user.about %></p>
-              <!--       I use to design websites and applications
-              for the web. -->
-            </div>
+            <div id="media-about-user"><%= post.user.about %></div>
           </section>
       <!-- Flykkes Section  -->
           <%= render 'likes/form', post: post %>

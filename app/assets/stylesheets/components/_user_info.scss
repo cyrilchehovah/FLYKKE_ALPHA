@@ -11,7 +11,7 @@
   margin: auto;
   margin-top: 90px;
   // margin-bottom: 20px;
-  width: 100%;
+  width: 120%;
   padding: 10px;
   background: $white-blue;
   position: relative;
@@ -19,8 +19,8 @@
   &-flykke-section {
     position: absolute;
     bottom: 10px;
-    /* left: 0; */
-    right: 5%;
+    left: 60%;
+    // right: 5%;
     margin: 0 auto;
     display: block;
   }
@@ -38,6 +38,8 @@
       margin: 5px 5px 5px 0px;
     }
     & h3 {
+      position: absolute;
+      left: 52%;
       display: inline-block;
       vertical-align: top;
       text-align: left;
@@ -49,6 +51,12 @@
     }
     & p {
       display: inline-block;
+      position: absolute;
+      top: 35px;
+      left: 52%;
+      right: 2%;
+      font-size: 11px;
+      color: $blue;
       // vertical-align: top;
       // text-align: left;
       // font-family: VarelaRound;
@@ -71,9 +79,9 @@
 
 .edit-user-info {
     position: absolute;
-    position: absolute;
     right: 0px;
     padding-right: 10px;
+    z-index: 2000;
 }
 
 .avatar-info {

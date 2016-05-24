@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
 
   INTERESTS = %w(All Charity Food Lifestyle Travel)
 
+  has_many :views
+
   validates :interest, inclusion: { in: INTERESTS }
   validates_presence_of :user
   validates_presence_of :url

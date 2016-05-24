@@ -32,6 +32,7 @@
             <div class="btn-flykke-section">
               <div class="btn-flykke">
                 <%= image_tag("logo-hand.png", :alt => "bird", :class => "logo-mini") %>
+                <p id="btn-flykke-text">received</p>
               </div>
               <% if @user.posts != nil %>
                 <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
@@ -48,12 +49,12 @@
         <ul class="tabs list-unstyled">
           <li role="presentation" class="actions-inline">
             <%= link_to user_path(@user, :anchor => "tab1"), class: "btn-user-cat" do %>
-              Personnal catalog
+              <%= @user.first_name %>'s posts Flykked
             <% end %>
           </li>
           <li role="presentation" class="actions-inline">
             <%= link_to user_path(@user, :anchor => "tab2"), class: "btn-user-cat" do %>
-              Creations
+              <%= @user.first_name %>'s creations
             <% end %>
           </li>
         </ul>
