@@ -1,5 +1,7 @@
 <div class="container total-width">
   <div class="row">
+
+    <!-- USER'S INFO CARD -->
     <div class="col-xs-hidden col-md-3">
       <div class="user-info">
         <div class="user-info-about">
@@ -23,16 +25,13 @@
               </div>
             </div>
           <% end %>
-
           <%= image_tag (@user.picture ? @user.picture : @user.picture.url(:thumb)), class: "avatar-info", alt: "user-picture" %>
           <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
           <p><%= @user.about %></p>
-
           <div class="user-info-flykke-section text-center">
-            <div class="btn-flykke-section">
-              <div class="btn-flykke">
-                <%= image_tag("logo-hand.png", :alt => "bird", :class => "logo-mini") %>
-                <p id="btn-flykke-text">received</p>
+            <div class="btn-flykke-section-user">
+              <div class="btn-flykke-user">
+                <%= image_tag("logo-hand-received.png", :alt => "bird", :class => "logo-mini") %>
               </div>
               <% if @user.posts != nil %>
                 <h1 class="btn-flykke-user-count"><%= @user.number_of_flykkes_received %></h1>
@@ -43,7 +42,7 @@
       </div>
     </div>
 
-
+    <!-- POSTS SECTION -->
     <div class="col-xs-12 col-md-9">
       <div class="user-info-nav text-center">
         <ul class="tabs list-unstyled">

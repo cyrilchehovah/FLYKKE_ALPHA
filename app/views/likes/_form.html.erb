@@ -1,6 +1,6 @@
 <div class="post-flykke-section text-center">
-  <div id="watch_ad" class="btn-flykke-section">
-    <%= link_to flykke_path(id: post.id), class: "btn-flykke", :method => :put do %>
+  <div class="btn-flykke-section">
+    <%= link_to post_views_path(post), class: "btn-flykke", :method => :post, remote: true do %>
       <%= image_tag("logo-hand.png", :alt => "bird", :class => "logo-mini") %>
     <% end %>
     <h3 class="btn-flykke-vote-count"><%= post.get_likes(:vote_scope => 'flykke').size %></h3>

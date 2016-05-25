@@ -1,0 +1,29 @@
+<div class="modal fade in" id="contact">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Contact us</h2>
+        <p>Thank you for your interest, please enter the following informations and we will get in touch as soon as possible.</p>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @contact do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :brand_name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'brand name', placeholder: "brand name", input_html: { class: "form-input" } %>
+            <%= f.input :name, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'name', placeholder: "name", input_html: { class: "form-input" } %>
+            <%= f.input :phone, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'phone number', placeholder: "phone number", input_html: { class: "form-input" } %>
+            <%= f.input :email, required: true, autofocus: true, inline_label: true, label: false, inline_label: 'email', placeholder: "email", input_html: { class: "form-input" } %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Contact us", class: "btn-confirm", disabled: true, :id => "submit-contact"  %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+

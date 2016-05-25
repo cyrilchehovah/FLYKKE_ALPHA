@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(status: :validated)
     @post = Post.new
-    @posts = Post.all
+    @user.posts = @user.posts.where(status: :validated)
   end
 
   def edit

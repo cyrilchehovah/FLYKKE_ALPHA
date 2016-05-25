@@ -1,5 +1,5 @@
 ActiveAdmin.register Contact do
-
+  permit_params :brand_name, :name, :phone, :email
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,6 +12,16 @@ ActiveAdmin.register Contact do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  form do |f|
+      f.inputs "bloc1" do
+        f.input :status, as: :select,  collection: [:pending, :validated]
+        f.input :brand_name
+        f.input :name
+        f.input :phone
+        f.input :email
+      end
+      f.actions
+  end
 
 
 end

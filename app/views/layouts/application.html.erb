@@ -19,6 +19,10 @@
       <%= render 'welcome/sign_up_modal' %>
       <%= render "welcome/login_modal" %>
       <%= render "welcome/forgot_password_modal" %>
+      <% if @contact %>
+        <%= render "contacts/contact_modal" %>
+      <% end %>
+
       <% if @post %>
         <%= render "posts/create_modal" %>
         <%= render "posts/register_modal" %>

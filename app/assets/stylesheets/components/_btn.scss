@@ -22,8 +22,11 @@
   border: 0;
   font-family: "varela round", "sans-serif";
   background-color: transparent;
+  text-decoration: none;
   &:hover {
     color: $yellow;
+    text-decoration: none;
+    outline: none;
   }
   &.active {
     color: $yellow;
@@ -72,6 +75,13 @@
   }
 }
 
+.btn-flykke-section-user {
+  background-color: white;
+  display: inline-block;
+  border-radius: 2px;
+  width: 99%;
+  }
+
 .btn-flykke-section {
   background-color: white;
   display: inline-block;
@@ -87,6 +97,15 @@
     color: $yellow;
     margin: 0;
   }
+
+.btn-flykke-user {
+  background-color: $blue;
+  padding: 7px;
+  display: inline-block;
+  border-radius: 2px 0px 0px 2px;
+  width: 62%;
+  text-align: center;
+}
 
 .btn-flykke {
   background-color: $blue;

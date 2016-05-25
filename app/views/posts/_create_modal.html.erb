@@ -37,7 +37,7 @@
           <div class="text-center col-xs-10 col-md-offset-1">
             <h4>Enter the url of your creation</h4>
             <%= simple_form_for(@post, :url => new_preview_path, remote: true) do |f| %>
-              <%= f.input :url , required: true, autofocus: true, inline_label: true, label: false, placeholder: "http://...", input_html: { class: "actions-inline form-input form-input-create" }%>
+              <%= f.input :url, required: true, autofocus: true, inline_label: true, label: false, placeholder: "http://...", input_html: { class: "actions-inline form-input form-input-create" }%>
               <%= hidden_field_tag :interest, nil, id: "preview_category" %>
               <%= f.submit 'load url', :id => 'submit_url', disabled: true, class: "actions-inline btn-confirm-sm"  %>
             <% end %>
@@ -48,23 +48,19 @@
           </div>
 
 
-        <hr>
+        <hr style="margin-top: 5px;margin-bottom: 5px;">
 
         <div class="row">
           <div class="text-center">
-            <p>By clicking Submit your creation, you agree to be the rightful content creator <br> and to the <a href="" class="text-link">Flykke Pages Terms</a>.</p>
+            <p style="margin-top: 5px;">By clicking Submit your creation, you agree to be the rightful content creator <br> and to the <a href="" class="text-link">Flykke Pages Terms</a>.</p>
           </div>
         </div>
 
         <br>
 
         <!-- fill the hidden form for the post creation with js -->
-        <div class="js-post-hidden-form">
+        <div class="js-post-hidden-form" style="margin-bottom: 20px">
           <%= render 'posts/hidden_form', post: @post %>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="form-actions">
         </div>
       </div>
     </div>

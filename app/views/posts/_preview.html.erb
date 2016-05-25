@@ -11,7 +11,7 @@
             <img src="<%= page.images.best %>" alt="post-image" class="post-img img-responsive">
           </section>
           <section class="media-section text-left">
-            <h3 id="preview-h3"><%= @page.description %></h3>
+            <h3 id="preview-h3" class="description-limit-preview"><%= @page.description %></h3>
             <% if @page.meta['og:site_name'] != nil %>
               <h4 id="preview-h4"><%= @page.meta['og:site_name'] %></h4>
             <% else %>
@@ -20,18 +20,18 @@
           </section>
         </div>
         <!-- media-aside / Flykke and Creator section -->
-        <div class="media-aside">
+        <div class="media-aside-preview">
           <!-- delete -->
           <i class="fa fa-times media-btn-delete" aria-hidden="true"></i>
           <!-- Creator's Profile-section -->
           <section class="media-section text-center">
             <img src="<%= current_user.picture %>" alt="user-picture" class="media media-profile-picture result-img img-responsive">
-            <div style="margin-top:10px;font-size: 11px;">
+            <div style="margin-top:10px;font-size: 9px;color:$dark-blue;">
               <h1 id="preview-h1" style="display:inline;">By</h1>
               <%= current_user.first_name %> <%= current_user.last_name %>
             </div>
-            <div class="description">
-              <p><%= current_user.about %></p>
+            <div class="media-about-preview">
+              <p id="media-about-paragraph"><%= current_user.about %></p>
             </div>
           </section>
           <!-- Flykkes Section  -->
@@ -45,17 +45,17 @@
           </div>
 
           <div class="post-share">
-            <div class="share-links text-center">
-              <a href="#" class="share-link bg-facebook not-active">
+            <div class="share-links-preview text-center">
+              <a href="#" class="share-link-preview bg-facebook not-active">
                 <i class="fa fa-facebook"></i>
               </a>
-              <a href="#" class="share-link bg-twitter not-active">
+              <a href="#" class="share-link-preview bg-twitter not-active">
                 <i class="fa fa-twitter"></i>
               </a>
-              <a href="#" class="share-link bg-email not-active">
+              <a href="#" class="share-link-preview bg-email not-active">
                 <i class="fa fa-envelope-o"></i>
               </a>
-              <a href="#" class="share-link bg-text not-active">
+              <a href="#" class="share-link-preview bg-text not-active">
                 <i class="fa fa-link"></i>
               </a>
             </div>
@@ -64,6 +64,10 @@
       </div>
     </div>
   </div>
+</div>
+<br>
+<div>
+  <p>Not the result you expected? Visit the <a href="https://developers.facebook.com/tools/debug/" class="text-link" target="_blank">Facebook debugger</a> to verify your meta-tags</p>
 </div>
 
 

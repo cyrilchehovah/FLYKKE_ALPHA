@@ -27,7 +27,7 @@
             <%= f.input :first_name, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "first name", input_html: { class: "form-input" }, required: false %>
             <%= f.input :last_name, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "last name", input_html: { class: "form-input" }, required: false %>
             <%= f.input :email, autofocus: true, inline_label: true, label: false, inline_label: 'first name', placeholder: "email", input_html: { class: "form-input" }, required: false %>
-            <%= f.input :about, :as => :text, autofocus: true, inline_label: true, label: false, inline_label: 'about', placeholder: "About", input_html: { class: "form-input" }, required: false, :max => 150 %>
+            <%= f.input :about, :as => :text, autofocus: true, inline_label: true, label: false, inline_label: 'about', placeholder: "About", input_html: { class: "form-input", :maxlength => 150 }, required: false %>
           </div>
           <div class="form-inputs text-center text-link">
             <%- if devise_mapping.registerable? && controller_name != 'registrations' %>

@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def home
     @post = Post.new
     @posts = Post.where(status: :validated)
+    @contact = Contact.new
   end
 
   def new_preview

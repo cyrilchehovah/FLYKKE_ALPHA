@@ -19,7 +19,8 @@
   &-flykke-section {
     position: absolute;
     bottom: 10px;
-    left: 60%;
+    left: 56%;
+    width: 130px;
     // right: 5%;
     margin: 0 auto;
     display: block;
@@ -28,14 +29,14 @@
     // display: inline-block;
     // position: absolute;
     & h1 {
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
       font-family: VarelaRound;
       font-size: 18px;
       color: $blue;
       line-height: 13px;
       margin: 5px 5px 5px 0px;
+      width: 30%;
+      text-align: center;
+      font-weight: bold;
     }
     & h3 {
       position: absolute;

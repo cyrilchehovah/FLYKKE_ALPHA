@@ -5,8 +5,22 @@
     // 3. On regarde s'il y a des meta-tags google  => Si oui on les prend / si non on continue
     // 4. On regarde s'il y a des meta-tags pinterests => Si oui on les prend / si non on continue
     // 5. On regarde s'il y a des meta-tags => Si oui on les prend / si non on lève une erreur!
-  $('#results').html("<%= j render 'posts/preview', page: @page, interest: @interest %>");
-  $('.js-post-hidden-form').html("<%= j render 'posts/hidden_form', post: @post %>");
+    $('#results').html("<%= j render 'posts/preview', page: @page, interest: @interest %>");
+    $('.js-post-hidden-form').html("<%= j render 'posts/hidden_form', post: @post %>");
+
+
+    $('#post_url').keypress(function(e){
+        console.log('salut')
+          if(e.which == 13){
+              console.log('hiiiii')
+               $('#submit_post').submit();
+           }
+        });
 
 
 
+
+var myDiv = $('.description-limit-preview');
+if ($('.description-limit-preview').text().length > 150) {
+  myDiv.text(myDiv.text().substring(0,150) + "...")
+}
