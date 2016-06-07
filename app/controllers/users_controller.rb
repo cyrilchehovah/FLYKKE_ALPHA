@@ -6,12 +6,19 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(status: :validated)
+    @posts = Post.where(status: :validated).paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js
+    end
     @post = Post.new
-    @user.posts = @user.posts.where(status: :validated)
+    @user.posts = @user.posts.where(status: :validated).paginate(page: params[:page]).order('created_at DESC')
+    @contact = Contact.new
   end
 
   def edit
+    @post = Post.new
+    @contact = Contact.new
   end
 
   def update
@@ -41,9 +48,20 @@ class UsersController < ApplicationController
     # @followers = @user.user_followers.paginate(page: params[:page])
   end
 
+  def new_preview
+    search_string = params[:post][:url]
+    @page = MetaInspector.new(search_string)
+    @interest = params[:interest]
+    @post = Post.new(title: @page.best_title, interest: @interest, description: @page.description, graphic_content: @page.images.best, url: @page.url, site_name: @page.meta['og:site_name'])
+    # render new_post_path
+  end
+
+
+
+
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :about, :picture)
+    params.require(:user).permit(:first_name, :last_name, :email, :about, :picture, :avatar)
   end
 
   def check_ownership

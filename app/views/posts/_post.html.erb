@@ -10,7 +10,11 @@
                <h4><i class="fa fa-clock-o"></i> <%= time_ago_in_words(post.created_at) %> ago</h4>
             </section>
             <section class="media-section">
-              <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
+              <% if post.video %>
+                <%= post.video %>
+              <% else %>
+                <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
+              <% end %>
             </section>
             <section class="media-section">
               <h3 class="description-limit"><%= post.description %></h3>

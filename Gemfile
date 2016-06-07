@@ -13,6 +13,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'social-share-button', '~> 0.1.6'
 gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
+gem 'will_paginate', '~> 3.1.0'
+gem 'link_thumbnailer'
 
 gem 'sass-rails'
 gem 'jquery-rails'

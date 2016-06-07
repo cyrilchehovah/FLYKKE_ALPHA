@@ -4,6 +4,28 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.user_avatar {
+  font-size: 12px;
+  padding: -6px;
+  margin: 0;
+}
+
+.crop-large {
+  width: 312px;
+  height: 312px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.crop-user-info-avatar {
+  width: 164px;
+  height: 164px;
+  overflow: hidden;
+  border-radius: 5px;
+  display: inline-block;
+}
+
 .fixed {
   position: fixed;
   width: 100%;
@@ -42,6 +64,13 @@
     right: 23%;
     top: 2%;
     z-index: 1000;
+    &-crop {
+      position: absolute;
+      right: -2%;
+      top: 2%;
+      z-index: 1000;
+
+    }
   }
 }
 

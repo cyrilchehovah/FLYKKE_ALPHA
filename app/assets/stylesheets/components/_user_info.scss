@@ -92,6 +92,13 @@
   display: inline-block;
 }
 
+.avatar-info-crop {
+  z-index: 3;
+  width: 100%;
+  border-radius: 5px;
+  display: inline-block;
+}
+
 .username-info {
   margin: auto;
   color: $white-blue;

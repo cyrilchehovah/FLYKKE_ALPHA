@@ -1,0 +1,7 @@
+$('#cat-newsfeed-tab1').append("<%= j render 'posts/posts_list', posts: @posts %>");
+<% if @posts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

@@ -1,15 +1,15 @@
 <div class="post-share">
   <div class="share-links text-center">
-    <a href="#" class="share-link bg-facebook">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=<%= post.url %>&title=<%= post.title %>" class="share-link bg-facebook" target="_blank">
       <i class="fa fa-2x fa-facebook"></i>
     </a>
-    <a href="#" class="share-link bg-twitter">
+    <a href="http://twitter.com/intent/tweet?status=<%= post.title %>+<%= post.url %>" class="share-link bg-twitter" target="_blank">
       <i class="fa fa-2x fa-twitter"></i>
     </a>
-    <a href="#" class="share-link bg-email">
+    <a href="mailto:?subject=<%= post.title %> - via Flykke&body=This is great:<%= post.url %>, on Flykke you can donate for free to support the author! " class="share-link bg-email" target="_blank">
       <i class="fa fa-2x fa-envelope-o"></i>
     </a>
-    <a href="#" class="share-link bg-text">
+    <a href="#" class="share-link bg-text" target="_blank">
       <i class="fa fa-2x fa-link"></i>
     </a>
   </div>

@@ -1,0 +1,7 @@
+$('#cat-newsfeed-<%= @category %>').append("<%= j render 'posts/posts_list', posts: @posts %>");
+<% if @posts.next_page %>
+  $('#infinite-scrolling-<%= @category %>').html('<%= j will_paginate @posts %>');
+<% else %>
+  $(window).off('scroll');
+  $('#infinite-scrolling-<%= @category %> .pagination').remove();
+<% end %>

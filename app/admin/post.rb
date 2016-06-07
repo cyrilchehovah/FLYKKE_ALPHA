@@ -19,6 +19,7 @@ ActiveAdmin.register Post do
         f.input :url
         f.input :interest
         f.input :site_name
+        f.input :graphic_content
       end
       f.actions
     end
@@ -34,8 +35,9 @@ ActiveAdmin.register Post do
     column :status
     column :site_name
     column :created_at
+    column :graphic_content
     actions
   end
 
-  permit_params :title, :description, :graphic_content, :url, :site_name, :interest, :status
+  permit_params :title, :description, :graphic_content, :url, :site_name, :interest, :status, :video
 end

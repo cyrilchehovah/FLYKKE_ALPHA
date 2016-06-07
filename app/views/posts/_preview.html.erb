@@ -8,7 +8,11 @@
              <h4 id="preview-h4"><i class="fa fa-clock-o"></i> less than a minute ago</h4>
           </section>
           <section class="media-section">
-            <img src="<%= page.images.best %>" alt="post-image" class="post-img img-responsive">
+            <% if object.videos.first %>
+              <%= object.videos.first.embed_code.html_safe %>
+            <% else %>
+              <img src="<%= page.images.best %>" alt="post-image" class="post-img img-responsive">
+            <% end %>
           </section>
           <section class="media-section text-left">
             <h3 id="preview-h3" class="description-limit-preview"><%= @page.description %></h3>
