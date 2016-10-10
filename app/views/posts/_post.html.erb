@@ -11,7 +11,7 @@
             </section>
             <section class="media-section">
               <% if  post.video != nil %>
-                <%= post.video %>
+                <%= post.video.html_safe %>
               <% elsif post.video == "" %>
                 <img src="<%= post.graphic_content %>" alt="post-image" class="post-img img-responsive">
               <% else %>
@@ -32,7 +32,7 @@
         <!-- media-aside / Flykke and Creator section -->
         <div class="media-aside">
           <!-- delete -->
-          <% if current_user == post.user %>
+          <% if current_user == post.user && post.views.empty? %>
             <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "media-btn-delete" do %>
               <i class="fa fa-times" aria-hidden="true"></i>
             <% end %>

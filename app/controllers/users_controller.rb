@@ -6,14 +6,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(status: :validated).paginate(page: params[:page]).order('created_at DESC')
+    @post = Post.new
+    @posts = @user.posts.where(status: :validated).paginate(page: params[:page]).order('created_at DESC')
+    @contact = Contact.new
     respond_to do |format|
       format.html
       format.js
     end
-    @post = Post.new
-    @user.posts = @user.posts.where(status: :validated).paginate(page: params[:page]).order('created_at DESC')
-    @contact = Contact.new
   end
 
   def edit

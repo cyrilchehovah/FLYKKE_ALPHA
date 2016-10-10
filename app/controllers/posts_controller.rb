@@ -52,9 +52,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params) do |post|
-    post.user = current_user
+    @post = Post.new(post_params)
+    @object = LinkThumbnailer.generate(@post.url)
+    if @object.videos.first
+      @post.video = @object.videos.first.embed_code.html_safe
     end
+    @post.user = current_user
     if @post.save
       redirect_to root_path
     else
@@ -72,10 +75,15 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    if @post.views.exists?
+      flash[:error] = "Vous ne pouvez pas supprimer un post déjà flykké!"
+      redirect_to root_path
+    else
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

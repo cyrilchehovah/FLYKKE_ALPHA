@@ -28,31 +28,31 @@
 
 <div class="scrollable-user">
   <div id="cat-crea-tab1">
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <%= render 'posts/post_user', post: post %>
     <% end %>
   </div>
 
   <div id="cat-crea-tab2">
-    <% @user.posts.where(interest: 'Charity').each do |post| %>
+    <% @posts.where(interest: 'Charity').each do |post| %>
       <%= render 'posts/post_user', post: post %>
     <% end %>
   </div>
 
   <div id="cat-crea-tab3">
-    <% @user.posts.where(interest: 'Food').each do |post| %>
+    <% @posts.where(interest: 'Food').each do |post| %>
       <%= render 'posts/post_user', post: post %>
     <% end %>
   </div>
 
   <div id="cat-crea-tab4">
-    <% @user.posts.where(interest: 'Lifestyle').each do |post| %>
+    <% @posts.where(interest: 'Lifestyle').each do |post| %>
       <%= render 'posts/post_user', post: post %>
     <% end %>
   </div>
 
   <div id="cat-crea-tab5">
-    <% @user.posts.where(interest: 'Travel').each do |post| %>
+    <% @posts.where(interest: 'Travel').each do |post| %>
       <%= render 'posts/post_user', post: post %>
     <% end %>
   </div>
