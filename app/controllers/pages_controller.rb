@@ -22,7 +22,17 @@ class PagesController < ApplicationController
     @page = MetaInspector.new(search_string)
     @object = LinkThumbnailer.generate(search_string)
     @interest = params[:interest]
-    @post = Post.new(title: @page.best_title, interest: @interest, description: @page.description, graphic_content: @page.images.best, video: @object.videos.first.embed_code, url: @page.url, site_name: @page.meta['og:site_name'])
+    @post = Post.new(
+      title: @page.best_title,
+      interest: @interest,
+      description: @page.description,
+      graphic_content: @page.images.best,
+      url: @page.url,
+      site_name: @page.meta['og:site_name']
+      )
+    if @object.videos.first
+      @post.video = @object.videos.first.embed_code.html_safe
+    end
     # render new_post_path
   end
 

@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       site_name: @page.meta['og:site_name']
     )
     if @object.videos.first
-      @post.video = @object.videos.first.embed_code
+      @post.video = @object.videos.first.embed_code.html_safe
     end
     # render new_post_path
   end
